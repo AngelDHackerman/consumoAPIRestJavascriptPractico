@@ -1,0 +1,19 @@
+{
+  "name": "consumoapirestjavascriptpractico",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.html",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/angelDariaux/consumoAPIRestJavascriptPractico.git"
+  },
+  "author": "@dariaux",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/angelDariaux/consumoAPIRestJavascriptPractico/issues"
+  },
+  "homepage": "https://github.com/angelDariaux/consumoAPIRestJavascriptPractico#readme"
+}
