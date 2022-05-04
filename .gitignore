@@ -105,4 +105,4 @@ dist
 
 
 # Secrets.js (API Key) 
-secrets.js*
+*secrets.js
