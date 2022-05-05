@@ -1,6 +1,7 @@
 // https://api.themoviedb.org/3/      // * URL base para la API
 // https://image.tmdb.org/t/p/w300/    // * URL base para las imagenes
 
+      // ! Imprimiento el poster de las peliculas
 
 const getTrendingMoviesPreview = async () => { 
   const res = await fetch(`https://api.themoviedb.org/3/trending/movie/day?api_key=${API_KEY}`);
@@ -25,4 +26,35 @@ const getTrendingMoviesPreview = async () => {
   });
 }
 
+      // ! Mostrando el preview de las categorias
+
+const getCategoriesPreview = async () => {
+  const res = await fetch(`https://api.themoviedb.org/3/genre/movie/list?api_key=${API_KEY}`);
+  const data = await res.json();
+
+  const categories = data.genres; 
+  categories.forEach(category => {
+    const previewCategoriesContainer = document.querySelector(
+      '#categoriesPreview .categoriesPreview-list'
+    );
+
+    const categoryContainer = document.createElement('div'); 
+    categoryContainer.classList.add('category-container');
+
+    const categoryTitle = document.createElement('h3');
+    categoryTitle.classList.add('category-title');
+
+    categoryTitle.setAttribute('id', `id${category.id}`);
+
+    const categoryTitleText = document.createTextNode(category.name);
+    
+    categoryTitle.appendChild(categoryTitleText);
+    categoryContainer.appendChild(categoryTitle);
+    previewCategoriesContainer.appendChild(categoryContainer);
+  })
+}
+
+      // ! Llamando a las funciones
+
 getTrendingMoviesPreview();
+getCategoriesPreview();
