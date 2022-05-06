@@ -1,6 +1,8 @@
 // https://api.themoviedb.org/3/      // * URL base para la API
 // https://image.tmdb.org/t/p/w300/    // * URL base para las imagenes
 
+// todo: Ver la rama 'before Axios' para ver como funciona el codigo sin axios.
+
       // ! Creando instancia de axios
 
 const api = axios.create({
