@@ -34,6 +34,9 @@ const categoriesPage = () => {
 
 const homePage = () => { 
   console.log('Home!');
+
+  getTrendingMoviesPreview();
+  getCategoriesPreview();
 }
 
 window.addEventListener('DOMContentLoaded', navigator, false);

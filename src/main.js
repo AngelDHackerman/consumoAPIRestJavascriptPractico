@@ -68,5 +68,5 @@ const getCategoriesPreview = async () => {
 
       // ! Llamando a las funciones
 
-getTrendingMoviesPreview();
-getCategoriesPreview();
+// ? Las funciones: getTrendingMoviesPreview() & getCategoriesPreview() 
+// ? Estan ubicadas en navigation.js dentro de la funcion homePage();
