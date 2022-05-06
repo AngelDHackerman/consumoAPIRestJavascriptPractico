@@ -1,6 +1,18 @@
 // https://api.themoviedb.org/3/      // * URL base para la API
 // https://image.tmdb.org/t/p/w300/    // * URL base para las imagenes
 
+      // ! Creando instancia de axios
+
+const api = axios.create({
+  baseURL: 'https://api.themoviedb.org/3/',
+  headers: { 
+    'Content-type': 'application/json;charset=utf-8',
+  },
+  params: {
+    'api_key': API_KEY,
+  },
+})
+
       // ! Imprimiento el poster de las peliculas
 
 const getTrendingMoviesPreview = async () => { 
