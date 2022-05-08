@@ -21,10 +21,9 @@ const getTrendingMoviesPreview = async () => {
   const { data } = await api('trending/movie/day');
   const movies = data.results;
 
-  movies.forEach(movie => { 
-    const trendingMoviesPreviewList = document.querySelector(
-      '#trendingPreview .trendingPreview-movieList'
-    )
+  trendingMoviesPreviewList.innerHTML = "";   // todo: Con esto borramos el contenido previo para evitar la repeticion de la lista en nuestra web.
+
+  movies.forEach(movie => {
 
     const movieContainer = document.createElement('div');
     movieContainer.classList.add('movie-container');
@@ -45,11 +44,10 @@ const getCategoriesPreview = async () => {
   const { data } = await api('genre/movie/list');
   const categories = data.genres;
 
-  categories.forEach(category => {
-    const categoriesPreviewList = document.querySelector(
-      '#categoriesPreview .categoriesPreview-list'
-    );
+  categoriesPreviewList.innerHTML = ""; // todo: Con esto borramos el contenido previo para evitar la repeticion de la lista en nuestra web.
 
+  categories.forEach(category => {
+    
     const categoryContainer = document.createElement('div'); 
     categoryContainer.classList.add('category-container');
 
