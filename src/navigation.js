@@ -72,6 +72,15 @@ const categoriesPage = () => {
   categoriesPreviewSection.classList.add('inactive');
   genericSection.classList.remove('inactive');
   movieDetailSection.classList.add('inactive');
+
+  // ! obteniendo el ID de la pelicula para por navegar en las categorias
+  // const [_, categoryData]; eso es una Destructuracion de array
+
+  const [_, categoryData] = location.hash.split('='); // ['#category', 'id-name'] // * convertimos la url en un array separado por el '=' y luego tomamos el id del segundo valor que nos devuelve split
+  const [categoryId, categoryName] = categoryData.split('-');
+
+  headerCategoryTitle.innerHTML = categoryName; // todo: Aqui le cambiamos el titulo a la pagina cuando navegamos entre categorias
+  getMoviesByCategory(categoryId);
 }
 
 const movieDetailsPage = () => { 
