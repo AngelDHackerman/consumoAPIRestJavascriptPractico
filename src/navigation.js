@@ -1,4 +1,19 @@
-      // ! Funcion navigator para ver en que hash stamos
+      // * Detectando eventos para navegar entre las paginas de nuestra API
+
+searchFormBtn.addEventListener('click', () => { 
+  location.hash = '#search=';
+});
+
+trendingBtn.addEventListener('click', () => { 
+  location.hash = '#trends';
+});
+
+arrowBtn.addEventListener('click', () => { 
+  location.hash = '#home';
+});
+
+
+      // ! Funcion navigator para ver en que hash estamos
       
 const navigator = () => { 
   console.log( { location }); 
