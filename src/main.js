@@ -22,7 +22,7 @@ const getTrendingMoviesPreview = async () => {
   const movies = data.results;
 
   movies.forEach(movie => { 
-    const trendingPreviewMoviesContainer = document.querySelector(
+    const trendingMoviesPreviewList = document.querySelector(
       '#trendingPreview .trendingPreview-movieList'
     )
 
@@ -35,7 +35,7 @@ const getTrendingMoviesPreview = async () => {
     movieImg.setAttribute('src', `https://image.tmdb.org/t/p/w300${movie.poster_path}`);
     
     movieContainer.appendChild(movieImg);
-    trendingPreviewMoviesContainer.appendChild(movieContainer);
+    trendingMoviesPreviewList.appendChild(movieContainer);
   });
 }
 
@@ -46,7 +46,7 @@ const getCategoriesPreview = async () => {
   const categories = data.genres;
 
   categories.forEach(category => {
-    const previewCategoriesContainer = document.querySelector(
+    const categoriesPreviewList = document.querySelector(
       '#categoriesPreview .categoriesPreview-list'
     );
 
@@ -62,7 +62,7 @@ const getCategoriesPreview = async () => {
     
     categoryTitle.appendChild(categoryTitleText);
     categoryContainer.appendChild(categoryTitle);
-    previewCategoriesContainer.appendChild(categoryContainer);
+    categoriesPreviewList.appendChild(categoryContainer);
   })
 }
 
