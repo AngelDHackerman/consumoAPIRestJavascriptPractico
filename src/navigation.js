@@ -89,7 +89,7 @@ const searchPage = () => {
   arrowBtn.classList.remove('header-arrow--white');
   headerTitle.classList.add('inactive');
   headerCategoryTitle.classList.remove('inactive');
-  searchForm.classList.add('inactive');
+  searchForm.classList.remove('inactive');
 
   trendingPreviewSection.classList.add('inactive');
   categoriesPreviewSection.classList.add('inactive');
@@ -99,6 +99,21 @@ const searchPage = () => {
 
 const trendsPage = () => { 
   console.log('Trends!!!')
+
+  // ? Agregando el codigo que viene de nodes.js 
+
+  headerSection.classList.remove('header-container--long');
+  headerSection.style.background = '';
+  arrowBtn.classList.remove('inactive'); 
+  arrowBtn.classList.remove('header-arrow--white');
+  headerTitle.classList.add('inactive');
+  headerCategoryTitle.classList.remove('inactive');
+  searchForm.classList.remove('inactive');
+
+  trendingPreviewSection.classList.add('inactive');
+  categoriesPreviewSection.classList.add('inactive');
+  genericSection.classList.remove('inactive');
+  movieDetailSection.classList.add('inactive');
 }
 
 
@@ -106,4 +121,4 @@ const trendsPage = () => {
 
 
 window.addEventListener('DOMContentLoaded', navigator, false);
-window.addEventListener('hashchange', navigator, false); 
+window.addEventListener('hashchange', navigator, false);  // * Esto activa la funcion navigator cuando el evento hashchange es detectado
