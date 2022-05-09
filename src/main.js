@@ -14,8 +14,7 @@ const api = axios.create({
     'api_key': API_KEY,
     
   },
-})
-
+});
 
       // ! Utils
 
