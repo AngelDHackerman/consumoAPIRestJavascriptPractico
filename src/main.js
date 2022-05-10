@@ -86,6 +86,18 @@ const getMoviesByCategory = async (id) => {
   createMovies(movies, genericSection)
 }
 
+      // ! Logica de la barra de busqueda
+
+const getMoviesBySearch = async (query) => { 
+  const { data } = await api('search/movie', { 
+    params: { 
+      query,
+    }
+  });
+  const movies = data.results;
+
+  createMovies(movies, genericSection)
+}
 
       //  Llamando a las funciones
 

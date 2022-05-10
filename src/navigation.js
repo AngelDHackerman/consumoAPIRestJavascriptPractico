@@ -1,7 +1,7 @@
       // * Detectando eventos para navegar entre las paginas de nuestra API
 
 searchFormBtn.addEventListener('click', () => { 
-  location.hash = '#search=';
+  location.hash = `#search=${searchFormInput.value}`;
 });
 
 trendingBtn.addEventListener('click', () => { 
@@ -76,7 +76,7 @@ const categoriesPage = () => {
   genericSection.classList.remove('inactive');
   movieDetailSection.classList.add('inactive');
 
-  // ! obteniendo el ID de la pelicula para por navegar en las categorias
+  //todo: Obteniendo el ID de la pelicula para por navegar en las categorias
   // const [_, categoryData]; eso es una Destructuracion de array
 
   const [_, categoryData] = location.hash.split('='); // ['#category', 'id-name'] // * convertimos la url en un array separado por el '=' y luego tomamos el id del segundo valor que nos devuelve split
@@ -115,13 +115,17 @@ const searchPage = () => {
   arrowBtn.classList.remove('inactive'); 
   arrowBtn.classList.remove('header-arrow--white');
   headerTitle.classList.add('inactive');
-  headerCategoryTitle.classList.remove('inactive');
+  headerCategoryTitle.classList.add('inactive');
   searchForm.classList.remove('inactive');
 
   trendingPreviewSection.classList.add('inactive');
   categoriesPreviewSection.classList.add('inactive');
   genericSection.classList.remove('inactive');
   movieDetailSection.classList.add('inactive');
+
+  const [_, query] = location.hash.split('='); // ['#category', 'id-name'] // * convertimos la url en un array separado por el '=' y luego tomamos el id del segundo valor que nos devuelve split
+  getMoviesBySearch(query);
+
 }
 
 const trendsPage = () => { 
@@ -142,9 +146,6 @@ const trendsPage = () => {
   genericSection.classList.remove('inactive');
   movieDetailSection.classList.add('inactive');
 }
-
-
-
 
 
 window.addEventListener('DOMContentLoaded', navigator, false);
