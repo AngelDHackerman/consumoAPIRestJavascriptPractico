@@ -29,6 +29,9 @@ const navigator = () => {
   } else { 
     homePage();
   }
+
+  document.body.scrollTop = 0;    // Esto hace que la pagina haga scroll hacia arriba automaticamente.
+  document.documentElement.scrollTop = 0;
 }
 
 const homePage = () => { 
