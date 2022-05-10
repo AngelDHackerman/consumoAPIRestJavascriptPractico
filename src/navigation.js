@@ -9,7 +9,8 @@ trendingBtn.addEventListener('click', () => {
 });
 
 arrowBtn.addEventListener('click', () => { 
-  location.hash = '#home';
+  history.back();     // todo: Esto nos hace regresar a la URL donde estabamos antes.
+  // location.hash = '#home';
 });
 
 
@@ -145,6 +146,9 @@ const trendsPage = () => {
   categoriesPreviewSection.classList.add('inactive');
   genericSection.classList.remove('inactive');
   movieDetailSection.classList.add('inactive');
+
+  headerCategoryTitle.innerHTML = 'Tendencias';
+  getTrendingMovies();    // * mostrando las peliculas en tendencia
 }
 
 

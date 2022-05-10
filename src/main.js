@@ -99,6 +99,15 @@ const getMoviesBySearch = async (query) => {
   createMovies(movies, genericSection)
 }
 
+      // ! Opteniendo las peliculas en tendencia
+
+const getTrendingMovies = async () => { 
+  const { data } = await api('trending/movie/day');
+  const movies = data.results;
+
+  createMovies(movies, genericSection);
+}
+
       //  Llamando a las funciones
 
 //  Las funciones: getTrendingMoviesPreview() & getCategoriesPreview() 
