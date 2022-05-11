@@ -134,7 +134,20 @@ const getMovieById = async (id) => {
 
   // Mostrando la categoria de la pelicula
   createCategories(movie.genres, movieDetailCategoriesList)
+
+  // mostrando las peliculas relacionadas
+  getRelatedMoviesId(id)
 }
+
+      // ! Mostrando las peliculas relacionadas 
+
+const getRelatedMoviesId = async (id) => { 
+  const { data } = await api(`movie/${id}/recommendations`);
+  const relatedMovies = data.results;
+
+  createMovies(relatedMovies, relatedMoviesContainer);
+}
+
 
       //  Llamando a las funciones
 
