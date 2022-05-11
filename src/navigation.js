@@ -104,6 +104,11 @@ const movieDetailsPage = () => {
   categoriesPreviewSection.classList.add('inactive');
   genericSection.classList.add('inactive');
   movieDetailSection.classList.remove('inactive');
+
+  // ['#movie', '12345']
+  const [_, movieId] = location.hash.split('=');  // * Esto nos da el Id que esta al final de la URL
+  getMovieById(movieId); 
+
 }
 
 const searchPage = () => { 

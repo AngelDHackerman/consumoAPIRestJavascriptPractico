@@ -24,6 +24,9 @@ const createMovies = (movies, container) => {
 
     const movieContainer = document.createElement('div');
     movieContainer.classList.add('movie-container');
+    movieContainer.addEventListener('click', () => {    // * Esto me muestra el ID de la pelicula que seleccionamos.
+      location.hash = `#movie=${movie.id}`;
+    });
 
     const movieImg = document.createElement('img');
     movieImg.classList.add('movie-img');
@@ -106,6 +109,31 @@ const getTrendingMovies = async () => {
   const movies = data.results;
 
   createMovies(movies, genericSection);
+}
+
+      // ! Mostrando los detalles de cada pelicula
+
+const getMovieById = async (id) => { 
+  const { data: movie } = await api(`movie/${id}`);
+
+  // opteniendo el url de la imagen de background:
+  const movieImgUrl = `https://image.tmdb.org/t/p/w500${movie.poster_path}`;
+  console.log(movieImgUrl);
+  headerSection.style.background = 
+    `url(${movieImgUrl}),
+    linear-gradient(
+      180deg,
+      rgba(0, 0, 0, 0.35) 19.27%,
+      rgba(0, 0, 0, 0.35) 29.17%
+    )`;
+
+  // imprimiento el titulo, descripcion y votacion
+  movieDetailTitle.textContent = movie.title;
+  movieDetailDescription.textContent = movie.overview;
+  movieDetailScore.textContent = movie.vote_average;
+
+  // Mostrando la categoria de la pelicula
+  createCategories(movie.genres, movieDetailCategoriesList)
 }
 
       //  Llamando a las funciones
